@@ -2,7 +2,7 @@
 
 ## Clinical Data Repository and Trust Integration Engine 
 
-(Intersystems IRIS including FHIR Repository)
+(Intersystems IRIS Data Platform including FHIR Repository)
 FHIR Repository [Intersystems Open Exchange - iris-fhir-template](https://openexchange.intersystems.com/package/iris-fhir-template)
 
 Useful links 
