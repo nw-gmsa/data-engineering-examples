@@ -1,5 +1,63 @@
+# Install instructions
 
-The examples use python [fhir.resources](https://pypi.org/project/fhir.resources/)
+## Clinical Data Repository (Intersystems FHIR Repositor)
 
-Some examples using python and FHIR can be found in Mitre [fhir-exercises](https://github.com/mitre/fhir-exercises/tree/main/Python) 
+FHIR Repository [Intersystems Open Exchange - iris-fhir-template](https://openexchange.intersystems.com/package/iris-fhir-template)
+
+Useful links 
+
+Username: _System 
+Password: SYS
+
+- Management Portal [IRIS Managment Portal](http://localhost:32783/csp/sys/UtilHome.csp)
+- SQL Explorer - [IRIS SQL Explorer](http://localhost:32783/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=FHIRSERVER)
+
+```sql
+SELECT 
+*
+FROM HSFHIR_X0001_S.Observation
+where patient = 'Patient/6' and code [ '38483-4';
+````
+
+
+### Intersystems + FHIR python packages
+
+`pip install intersystems-irispython`
+
+`pip install sqlalchemy-iris`
+
+`pip install fhir.resources`
+
+
+
+### Notes
+
+####  Patient Data Fix
+
+[iris-fhir-template issue 32](https://github.com/intersystems-community/iris-fhir-template/issues/32)
+
+Follow instructions up to this command
+
+`FHIRSERVER>d ##class(fhirtemplate.Setup).LoadPatientData("/irisdev/app/output/fhir","FHIRSERVER","/fhir/r4")`
+
+Instead
+
+Using [IRIS Package Manager](http://localhost:32783/csp/sys/mgr/%25CSP.UI.Portal.Mappings.zen?MapType=Prj&PID=FHIRSERVER) map package `fhirtemplate` from USER namespace.
+
+Copy contents of
+
+> output\fhir
+
+These need to be copied to
+
+> data\fhir
+
+Which is a mapped folder in the docker-compose. Then the load command is (presuming the class has been mapped to FHIRSERVER namespace)
+
+> d ##class(fhirtemplate.Setup).LoadPatientData("/data/fhir","FHIRSERVER","/fhir/r4")
+
+### Useful resources
+
+Intersystems (France) Engineer
+https://github.com/SylvainGuilbaud?tab=repositories
 
