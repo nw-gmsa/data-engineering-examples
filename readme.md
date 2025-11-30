@@ -10,6 +10,7 @@ Useful links
 Username: _System 
 Password: SYS
 
+- Command Line - On mac, using docker studio, use exec window and start using 'irissession IRIS' command.
 - Management Portal [IRIS Managment Portal](http://localhost:32783/csp/sys/UtilHome.csp)
 - SQL Explorer - [IRIS SQL Explorer](http://localhost:32783/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=FHIRSERVER)
 
