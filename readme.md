@@ -7,6 +7,9 @@ FHIR Repository [Intersystems Open Exchange - iris-fhir-template](https://openex
 
 ## Useful links 
 
+FHIR Server baseUrl: http://localhost:32783/fhir/r4/ 
+Conformance Statement: http://localhost:32783/fhir/r4/metadata
+
 Username: _System 
 Password: SYS
 
